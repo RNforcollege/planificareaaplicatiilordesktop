@@ -1,0 +1,21 @@
+@startuml
+
+start
+
+:Receive data segment from wearable;
+:Identify segment type (steps / sleep);
+
+if (Segment valid?) then (yes)
+    :Normalize data;
+    :Convert to internal format;
+    :Append to time series;
+    :Recalculate aggregates;
+    :Update UI;
+else (no)
+    :Discard segment;
+endif
+
+stop
+
+@enduml
+

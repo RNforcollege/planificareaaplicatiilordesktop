@@ -1,0 +1,23 @@
+@startuml
+
+package "Health Monitoring App" {
+
+    [Account Manager]
+    [Token Manager]
+    [Wearable Sync Module]
+    [Data Processor]
+    [Local Storage]
+    [UI Dashboard]
+
+    [Account Manager] --> [Local Storage]
+    [Token Manager] --> [Local Storage]
+
+    [Wearable Sync Module] --> [Data Processor]
+    [Data Processor] --> [Local Storage]
+
+    [UI Dashboard] --> [Local Storage]
+    [UI Dashboard] --> [Data Processor]
+}
+
+@enduml
+

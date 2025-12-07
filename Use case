@@ -1,0 +1,31 @@
+@startuml
+
+actor User
+
+rectangle "Health Monitoring App" {
+    usecase "Create Local Account" as UC_Create
+    usecase "Import Token" as UC_Import
+    usecase "Export Token" as UC_Export
+    usecase "Log In" as UC_Login
+
+    usecase "Sync Wearable Data" as UC_Sync
+
+    usecase "View Steps Data" as UC_Steps
+    usecase "View Sleep Data" as UC_Sleep
+}
+
+User --> UC_Create
+User --> UC_Import
+User --> UC_Export
+User --> UC_Login
+
+User --> UC_Sync
+
+User --> UC_Steps
+User --> UC_Sleep
+
+UC_Sync --> UC_Steps
+UC_Sync --> UC_Sleep
+
+@enduml
+
